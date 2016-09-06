@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fractl Interactive Template</title>
+    <title>Odds of Being You</title>
     <!-- EDIT THIS: Page Title -->
     <meta name="description" content="Interactive template for fractl." />
     <!-- EDIT THIS: Page Description -->
@@ -39,7 +39,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
     <meta property="og:type" content="article" />
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -62,14 +62,14 @@
             <div class="col-sm-10">
                 <div class="row">
                     <div class="col-sm-2">
-                        <img src="./assets/images/Icons-01.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-01.png" class="input-icon" />
                         <h3 class="input-label">FIRST NAME</h3>
                     </div>
                     <div class="col-sm-3">
                         <input placeholder="First Name" class="input-name" type="text" name="fname" id="fname">
                     </div>
                     <div class="col-sm-2">
-                        <img src="./assets/images/Icons-01.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-01.png" class="input-icon" />
                         <h3 class="input-label">LAST NAME</h3>
                     </div>
                     <div class="col-sm-4">
@@ -78,332 +78,359 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-2">
-                        <img src="./assets/images/Icons-12.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-12.png" class="input-icon" />
                         <h3 class="input-label">GENDER</h3>
                     </div>
                     <div class="col-sm-2">
-                            <select id="gender">
-                                <option disabled selected value><!-- blank --></option>
-                                <option>Female</option>
-                                <option>Male</option>
-                            </select>
+                        <select id="gender">
+                            <option disabled selected value>
+                                <!-- blank -->
+                            </option>
+                            <option>Female</option>
+                            <option>Male</option>
+                        </select>
                     </div>
                     <div class="col-sm-offset-1 col-sm-2">
                         <img src="./assets/images/Icons-07.png" class="input-icon" />
                         <h3 class="input-label">EYE COLOR</h3>
                     </div>
                     <div class="col-sm-4">
-                            <select id="eyecolor">
-                                <option disabled selected value><!-- blank --></option>
-                                <option>Blue / Grey Irises</option>
-                                <option>Blue / Grey / Green Irises with Brown / Yellow Specks</option>
-                                <option>Green / Light Brown Irises with Minimal Specks</option>
-                                <option>Brown Irises with Specks</option>
-                                <option>Dark Brown Irises</option>
-                            </select>
+                        <select id="eyecolor">
+                            <option disabled selected value>
+                                <!-- blank -->
+                            </option>
+                            <option>Blue / Grey Irises</option>
+                            <option>Blue / Grey / Green Irises with Brown / Yellow Specks</option>
+                            <option>Green / Light Brown Irises with Minimal Specks</option>
+                            <option>Brown Irises with Specks</option>
+                            <option>Dark Brown Irises</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-2">
-                        <img src="./assets/images/Icons-02.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-02.png" class="input-icon" />
                         <h3 class="input-label">HEIGHT</h3>
                     </div>
                     <div class="col-sm-2">
-                            <select id="height">
-                                <option disabled selected value=""><!-- blank --></option>
-                                <option value="54">4'6''</option>
-                                <option value="55">4'7''</option>
-                                <option value="56">4'8''</option>
-                                <option value="57">4'9''</option>
-                                <option value="58">4'10''</option>
-                                <option value="59">4'11''</option>
-                                <option value="60">5'0''</option>
-                                <option value="61">5'1''</option>
-                                <option value="62">5'2''</option>
-                                <option value="63">5'3''</option>
-                                <option value="64">5'4''</option>
-                                <option value="65">5'5''</option>
-                                <option value="66">5'6''</option>
-                                <option value="67">5'7''</option>
-                                <option value="68">5'8''</option>
-                                <option value="69">5'9''</option>
-                                <option value="70">5'10''</option>
-                                <option value="71">5'11''</option>
-                                <option value="72">6'0''</option>
-                                <option value="73">6'1''</option>
-                                <option value="74">6'2''</option>
-                                <option value="75">6'3''</option>
-                                <option value="76">6'4''</option>
-                                <option value="77">6'5''</option>
-                                <option value="78">6'6'' </option>
-                            </select>
+                        <select id="height">
+                            <option disabled selected value="">
+                                <!-- blank -->
+                            </option>
+                            <option value="54">4'6''</option>
+                            <option value="55">4'7''</option>
+                            <option value="56">4'8''</option>
+                            <option value="57">4'9''</option>
+                            <option value="58">4'10''</option>
+                            <option value="59">4'11''</option>
+                            <option value="60">5'0''</option>
+                            <option value="61">5'1''</option>
+                            <option value="62">5'2''</option>
+                            <option value="63">5'3''</option>
+                            <option value="64">5'4''</option>
+                            <option value="65">5'5''</option>
+                            <option value="66">5'6''</option>
+                            <option value="67">5'7''</option>
+                            <option value="68">5'8''</option>
+                            <option value="69">5'9''</option>
+                            <option value="70">5'10''</option>
+                            <option value="71">5'11''</option>
+                            <option value="72">6'0''</option>
+                            <option value="73">6'1''</option>
+                            <option value="74">6'2''</option>
+                            <option value="75">6'3''</option>
+                            <option value="76">6'4''</option>
+                            <option value="77">6'5''</option>
+                            <option value="78">6'6'' </option>
+                        </select>
                     </div>
                     <div class="col-sm-offset-1 col-sm-2">
-                        <img src="./assets/images/Icons-08.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-08.png" class="input-icon" />
                         <h3 class="input-label">RACE</h3>
                     </div>
                     <div class="col-sm-4">
-                            <select id="race">
-                                <option disabled selected value=""><!-- blank --></option>
-                                <option value="white">White</option>
-                                <option value="black">Black</option>
-                                <option>Asian</option>
-                                <option>Amerindian and Alaska native</option>
-                                <option value="native Hawaiian and other Pacific islander">Native Hawaiian and Other Pacific Islander</option>
-                                <option value="two or more races">Two or More Races</option>
-                            </select>
+                        <select id="race">
+                            <option disabled selected value="">
+                                <!-- blank -->
+                            </option>
+                            <option value="white">White</option>
+                            <option value="black">Black</option>
+                            <option>Asian</option>
+                            <option>Amerindian and Alaska native</option>
+                            <option value="native Hawaiian and other Pacific islander">Native Hawaiian and Other Pacific Islander</option>
+                            <option value="two or more races">Two or More Races</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-2">
-                        <img src="./assets/images/Icons-03.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-03.png" class="input-icon" />
                         <h3 class="input-label">WEIGHT/LBS</h3>
                     </div>
                     <div class="col-sm-2">
                         <input class="input-weight" type="text" onkeypress="return isNumberKey(event)" min="1" max="999" maxlength="3" name="weight" id="weight" />
                     </div>
                     <div class="col-sm-offset-1 col-sm-2">
-                        <img src="./assets/images/Icons-09.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-09.png" class="input-icon" />
                         <h3 class="input-label">RELIGION</h3>
                     </div>
                     <div class="col-sm-4">
-                            <select id="religion">
-                                <option disabled selected value=""><!-- blank --></option>
-                                <option>Protestant</option>
-                                <option>Catholic</option>
-                                <option>Orthodox Christian</option>
-                                <option>Mormon</option>
-                                <option>Jehova's Witness</option>
-                                <option>Other Christian</option>
-                                <option>Jewish</option>
-                                <option>Muslim</option>
-                                <option>Buddhist</option>
-                                <option>Hindu</option>
-                                <option>Other World Religions</option>
-                                <option>Other Faiths</option>
-                                <option>Atheist</option>
-                                <option>Agnostic</option>
-                                <option>Nothing in paricular</option>
-                                <option>Don't Know / Didn't Answer</option>
-                            </select>
+                        <select id="religion">
+                            <option disabled selected value="">
+                                <!-- blank -->
+                            </option>
+                            <option>Protestant</option>
+                            <option>Catholic</option>
+                            <option>Orthodox Christian</option>
+                            <option>Mormon</option>
+                            <option>Jehova's Witness</option>
+                            <option>Other Christian</option>
+                            <option>Jewish</option>
+                            <option>Muslim</option>
+                            <option>Buddhist</option>
+                            <option>Hindu</option>
+                            <option>Other World Religions</option>
+                            <option>Other Faiths</option>
+                            <option>Atheist</option>
+                            <option>Agnostic</option>
+                            <option>Nothing in paricular</option>
+                            <option>Don't Know / Didn't Answer</option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-2">
-                        <img src="./assets/images/Icons-04.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-04.png" class="input-icon" />
                         <h3 class="input-label">BLOOD TYPE</h3>
                     </div>
                     <div class="col-sm-2">
-                            <select id="bloodtype">
-                                <option disabled selected value=""><!-- blank --></option>
-                                <option>O+</option>
-                                <option>O-</option>
-                                <option>A+</option>
-                                <option>A-</option>
-                                <option>B+</option>
-                                <option>B-</option>
-                                <option>AB+</option>
-                                <option>AB-</option>
-                            </select>
+                        <select id="bloodtype">
+                            <option disabled selected value="">
+                                <!-- blank -->
+                            </option>
+                            <option>O+</option>
+                            <option>O-</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                        </select>
                     </div>
 
                     <div class="col-sm-offset-1 col-sm-2">
-                        <img src="./assets/images/Icons-10.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-10.png" class="input-icon" />
                         <h3 class="input-label">HAIR COLOR</h3>
                     </div>
                     <div class="col-sm-4">
-                            <select id="haircolor">
-                                <option disabled selected value=""><!-- blank --></option>
-                                <option value="black">Black</option>
-                                <option value="dark brown">Dark Brown</option>
-                                <option value="light brown">Light Brown</option>
-                                <option value="blonde">Blonde</option>
-                                <option value="red">Red</option>
-                            </select>
+                        <select id="haircolor">
+                            <option disabled selected value="">
+                                <!-- blank -->
+                            </option>
+                            <option value="black">Black</option>
+                            <option value="dark brown">Dark Brown</option>
+                            <option value="light brown">Light Brown</option>
+                            <option value="blonde">Blonde</option>
+                            <option value="red">Red</option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-2">
-                        <img src="./assets/images/Icons-05.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-05.png" class="input-icon" />
                         <h3 class="input-label">AGE</h3>
                     </div>
                     <div class="col-sm-2">
-                            <select id="age">
-                                <option disabled selected value=""><!-- blank --></option>
-                                <option>0-14</option>
-                                <option>15-24</option>
-                                <option>25-54</option>
-                                <option>55-64</option>
-                                <option value="65 years and over">65 Years and Over</option>
-                            </select>
+                        <select id="age">
+                            <option disabled selected value="">
+                                <!-- blank -->
+                            </option>
+                            <option>0-14</option>
+                            <option>15-24</option>
+                            <option>25-54</option>
+                            <option>55-64</option>
+                            <option value="65 years and over">65 Years and Over</option>
+                        </select>
                     </div>
 
                     <div class="col-sm-offset-1 col-sm-2">
-                        <img src="./assets/images/Icons-11.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-11.png" class="input-icon" />
                         <h3 class="input-label">TANNING ABILITY</h3>
                     </div>
                     <div class="col-sm-4">
-                            <select id="tanningability">
-                                <option disabled selected value=""><!-- blank --></option>
-                                <option value="Practically none">Practically None</option>
-                                <option value="light tan">Light Tan</option>
-                                <option value="average tan">Average Tan</option>
-                                <option value="deep tan">Deep Tan</option>
-                            </select>
+                        <select id="tanningability">
+                            <option disabled selected value="">
+                                <!-- blank -->
+                            </option>
+                            <option value="Practically none">Practically None</option>
+                            <option value="light tan">Light Tan</option>
+                            <option value="average tan">Average Tan</option>
+                            <option value="deep tan">Deep Tan</option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-2">
-                        <img src="./assets/images/Icons-06.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-06.png" class="input-icon" />
                         <h3 class="input-label">SHOE SIZE</h3>
                     </div>
                     <div class="col-sm-2">
-                            <select id="shoesize">
-                                <option disabled selected value=""><!-- blank --></option>
-                                <option>4</option>
-                                <option>4.5</option>
-                                <option>5</option>
-                                <option>5.5</option>
-                                <option>6</option>
-                                <option>6.5</option>
-                                <option>7</option>
-                                <option>7.5</option>
-                                <option>8</option>
-                                <option>8.5</option>
-                                <option>9</option>
-                                <option>9.5</option>
-                                <option>10</option>
-                                <option>10.5</option>
-                                <option>11</option>
-                                <option>11.5</option>
-                                <option>12</option>
-                                <option>12.5</option>
-                                <option>13</option>
-                                <option>13.5</option>
-                                <option>14</option>
-                                <option>15</option>
-                                <option>16</option>
-                                <option>17</option>
-                            </select>
+                        <select id="shoesize">
+                            <option disabled selected value="">
+                                <!-- blank -->
+                            </option>
+                            <option>4</option>
+                            <option>4.5</option>
+                            <option>5</option>
+                            <option>5.5</option>
+                            <option>6</option>
+                            <option>6.5</option>
+                            <option>7</option>
+                            <option>7.5</option>
+                            <option>8</option>
+                            <option>8.5</option>
+                            <option>9</option>
+                            <option>9.5</option>
+                            <option>10</option>
+                            <option>10.5</option>
+                            <option>11</option>
+                            <option>11.5</option>
+                            <option>12</option>
+                            <option>12.5</option>
+                            <option>13</option>
+                            <option>13.5</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                        </select>
                     </div>
 
                     <div class="col-sm-offset-1 col-sm-2">
-                        <img src="./assets/images/Icons-17.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-17.png" class="input-icon" />
                         <h3 class="input-label">DOMINANT HAND</h3>
                     </div>
                     <div class="col-sm-4">
-                            <select id="dominanthand">
-                                <option disabled selected value=""><!-- blank --></option>
-                                <option>Left</option>
-                                <option>Right</option>
-                                <option>Ambidextrous</option>
-                            </select>
+                        <select id="dominanthand">
+                            <option disabled selected value="">
+                                <!-- blank -->
+                            </option>
+                            <option>Left</option>
+                            <option>Right</option>
+                            <option>Ambidextrous</option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-2">
-                        <img src="./assets/images/Icons-13.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-13.png" class="input-icon" />
                         <h3 class="input-label">SEXUAL ORIENTATION</h3>
                     </div>
                     <div class="col-sm-2">
-                            <select id="sexualorientation">
-                                <option disabled selected value=""><!-- blank --></option>
-                                <option>Straight</option>
-                                <option>Gay or lesbian</option>
-                                <option>Bisexual</option>
-                            </select>
+                        <select id="sexualorientation">
+                            <option disabled selected value="">
+                                <!-- blank -->
+                            </option>
+                            <option>Straight</option>
+                            <option>Gay or lesbian</option>
+                            <option>Bisexual</option>
+                        </select>
                     </div>
                     <div class="col-sm-offset-1  col-sm-2">
-                        <img src="./assets/images/Icons-15.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-15.png" class="input-icon" />
                         <h3 class="input-label">LANGUAGE</h3>
                     </div>
                     <div class="col-sm-4">
-                            <select id="language">
-                                <option disabled selected value=""><!-- blank --></option>
-                                <option>English</option>
-                                <option>Spanish</option>
-                                <option value="other Indo-European">Other Indo-European</option>
-                                <option>Asian and Pacific island</option>
-                                <option value="other">Other</option>
-                            </select>
+                        <select id="language">
+                            <option disabled selected value="">
+                                <!-- blank -->
+                            </option>
+                            <option>English</option>
+                            <option>Spanish</option>
+                            <option value="other Indo-European">Other Indo-European</option>
+                            <option>Asian and Pacific island</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-2">
-                        <img src="./assets/images/Icons-16.png" class="input-icon"/>
+                        <img src="./assets/images/Icons-16.png" class="input-icon" />
                         <h3 class="input-label">INCOME</h3>
                     </div>
                     <div class="col-sm-3">
-                            <select id="income">
-                                <option disabled selected value=""><!-- blank --></option>
-                                <option>Under $5,000</option>
-                                <option>$5,000 to $9,999</option>
-                                <option>$10,000 to $14,999</option>
-                                <option>$15,000 to $19,999</option>
-                                <option>$20,000 to $24,999</option>
-                                <option>$25,000 to $29,999</option>
-                                <option>$30,000 to $34,999</option>
-                                <option>$35,000 to $39,999</option>
-                                <option>$40,000 to $44,999</option>
-                                <option>$45,000 to $49,999</option>
-                                <option>$50,000 to $54,999</option>
-                                <option>$55,000 to $59,999</option>
-                                <option>$60,000 to $64,999</option>
-                                <option>$65,000 to $69,999</option>
-                                <option>$70,000 to $74,999</option>
-                                <option>$75,000 to $79,999</option>
-                                <option>$80,000 to $84,999</option>
-                                <option>$85,000 to $89,999</option>
-                                <option>$90,000 to $94,999</option>
-                                <option>$95,000 to $99,999</option>
-                                <option>$100,000 to $104,999</option>
-                                <option>$105,000 to $109,999</option>
-                                <option>$110,000 to $114,999</option>
-                                <option>$115,000 to $119,999</option>
-                                <option>$120,000 to $124,999</option>
-                                <option>$125,000 to $129,999</option>
-                                <option>$130,000 to $134,999</option>
-                                <option>$135,000 to $139,999</option>
-                                <option>$140,000 to $144,999</option>
-                                <option>$145,000 to $149,999</option>
-                                <option>$150,000 to $154,999</option>
-                                <option>$155,000 to $159,999</option>
-                                <option>$160,000 to $164,999</option>
-                                <option>$165,000 to $169,999</option>
-                                <option>$170,000 to $174,999</option>
-                                <option>$175,000 to $179,999</option>
-                                <option>$180,000 to $184,999</option>
-                                <option>$185,000 to $189,999</option>
-                                <option>$190,000 to $194,999</option>
-                                <option>$195,000 to $199,999</option>
-                                <option>$200,000 and over</option>
-                            </select>
+                        <select id="income">
+                            <option disabled selected value="">
+                                <!-- blank -->
+                            </option>
+                            <option>Under $5,000</option>
+                            <option>$5,000 to $9,999</option>
+                            <option>$10,000 to $14,999</option>
+                            <option>$15,000 to $19,999</option>
+                            <option>$20,000 to $24,999</option>
+                            <option>$25,000 to $29,999</option>
+                            <option>$30,000 to $34,999</option>
+                            <option>$35,000 to $39,999</option>
+                            <option>$40,000 to $44,999</option>
+                            <option>$45,000 to $49,999</option>
+                            <option>$50,000 to $54,999</option>
+                            <option>$55,000 to $59,999</option>
+                            <option>$60,000 to $64,999</option>
+                            <option>$65,000 to $69,999</option>
+                            <option>$70,000 to $74,999</option>
+                            <option>$75,000 to $79,999</option>
+                            <option>$80,000 to $84,999</option>
+                            <option>$85,000 to $89,999</option>
+                            <option>$90,000 to $94,999</option>
+                            <option>$95,000 to $99,999</option>
+                            <option>$100,000 to $104,999</option>
+                            <option>$105,000 to $109,999</option>
+                            <option>$110,000 to $114,999</option>
+                            <option>$115,000 to $119,999</option>
+                            <option>$120,000 to $124,999</option>
+                            <option>$125,000 to $129,999</option>
+                            <option>$130,000 to $134,999</option>
+                            <option>$135,000 to $139,999</option>
+                            <option>$140,000 to $144,999</option>
+                            <option>$145,000 to $149,999</option>
+                            <option>$150,000 to $154,999</option>
+                            <option>$155,000 to $159,999</option>
+                            <option>$160,000 to $164,999</option>
+                            <option>$165,000 to $169,999</option>
+                            <option>$170,000 to $174,999</option>
+                            <option>$175,000 to $179,999</option>
+                            <option>$180,000 to $184,999</option>
+                            <option>$185,000 to $189,999</option>
+                            <option>$190,000 to $194,999</option>
+                            <option>$195,000 to $199,999</option>
+                            <option>$200,000 and over</option>
+                        </select>
                     </div>
                 </div>
 
-            <div class="row">
-                <div class="col-xs-offset-5 col-xs-1">
-                    <div class="arrow-stem"></div>
-                    <div class="arrow-point"></div>
+                <div class="row">
+                    <div class="col-xs-offset-5 col-xs-1">
+                        <div class="arrow-stem"></div>
+                        <div class="arrow-point"></div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col-sm-offset-2 col-sm-6">
-                    <div class="button-shadow">
-                        <button type="button" class="btn btn-info btn-lg search-now" onclick="getData()"><img src="./assets/images/search-now-mag-tt.png" class="button-icon"/>SEARCH NOW!</button>
+                <div class="row">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <div class="button-shadow">
+                            <button type="button" class="btn btn-info btn-lg search-now" onclick="getData()"><img src="./assets/images/search-now-mag-tt.png" class="button-icon" />SEARCH NOW!</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
-           
+
         </div>
 
-        <div id="progress"></div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -411,29 +438,25 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                             <div class="container">
-                                <img src="./assets/images/header.png" />
-                            </div>
+                        <div class="container">
+                            <img src="./assets/images/header.png" />
+                        </div>
                     </div>
                     <div class="modal-body">
                         <h3 class="result-title">THERE ARE</h3>
                         <div class="result-box">
                             <h2 id="result_data"><span id="result_span"></span><img id="personicon" src="./assets/images/person-icon-m.svg" class="button-icon result-icon"/></h2>
                         </div>
-                    <h3 class="result-title sub">PERSONS WHO LOOKALIKE YOU!</h3>
+                        <h3 class="result-title sub">PERSONS WHO LOOKALIKE YOU!</h3>
 
                         <div class="button-shadow try-again-button">
-                            <button type="button" class="btn btn-info btn-lg search-now" data-dismiss="modal"><img src="./assets/images/refresh-icon.svg" class="button-icon refresh-icon"/>TRY AGAIN</button>
+                            <button type="button" class="btn btn-info btn-lg search-now" data-dismiss="modal"><img src="./assets/images/refresh-icon.svg" class="button-icon refresh-icon" />TRY AGAIN</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-
-    <script src="assets/js/main.js"></script>
-
+    <script src="assets/js/main.min.js"></script>
 </body>
-
 </html>

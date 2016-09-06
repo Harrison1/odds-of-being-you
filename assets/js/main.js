@@ -29,190 +29,190 @@ var pymChild = new pym.Child();
 "function"!=typeof Object.create&&(Object.create=function(t){function o(){}return o.prototype=t,new o}),function(t,o){"use strict";var i={_positionClasses:["bottom-left","bottom-right","top-right","top-left","bottom-center","top-center","mid-center"],_defaultIcons:["success","error","info","warning"],init:function(o){this.prepareOptions(o,t.toast.options),this.process()},prepareOptions:function(o,i){var s={};"string"==typeof o||o instanceof Array?s.text=o:s=o,this.options=t.extend({},i,s)},process:function(){this.setup(),this.addToDom(),this.position(),this.bindToast(),this.animate()},setup:function(){var o="";if(this._toastEl=this._toastEl||t("<div></div>",{"class":"jq-toast-single"}),o+='<span class="jq-toast-loader"></span>',this.options.allowToastClose&&(o+='<span class="close-jq-toast-single">&times;</span>'),this.options.text instanceof Array){this.options.heading&&(o+='<h2 class="jq-toast-heading">'+this.options.heading+"</h2>"),o+='<ul class="jq-toast-ul">';for(var i=0;i<this.options.text.length;i++)o+='<li class="jq-toast-li" id="jq-toast-item-'+i+'">'+this.options.text[i]+"</li>";o+="</ul>"}else this.options.heading&&(o+='<h2 class="jq-toast-heading">'+this.options.heading+"</h2>"),o+=this.options.text;this._toastEl.html(o),this.options.bgColor!==!1&&this._toastEl.css("background-color",this.options.bgColor),this.options.textColor!==!1&&this._toastEl.css("color",this.options.textColor),this.options.textAlign&&this._toastEl.css("text-align",this.options.textAlign),this.options.icon!==!1&&(this._toastEl.addClass("jq-has-icon"),-1!==t.inArray(this.options.icon,this._defaultIcons)&&this._toastEl.addClass("jq-icon-"+this.options.icon))},position:function(){"string"==typeof this.options.position&&-1!==t.inArray(this.options.position,this._positionClasses)?"bottom-center"===this.options.position?this._container.css({left:t(o).outerWidth()/2-this._container.outerWidth()/2,bottom:20}):"top-center"===this.options.position?this._container.css({left:t(o).outerWidth()/2-this._container.outerWidth()/2,top:20}):"mid-center"===this.options.position?this._container.css({left:t(o).outerWidth()/2-this._container.outerWidth()/2,top:t(o).outerHeight()/2-this._container.outerHeight()/2}):this._container.addClass(this.options.position):"object"==typeof this.options.position?this._container.css({top:this.options.position.top?this.options.position.top:"auto",bottom:this.options.position.bottom?this.options.position.bottom:"auto",left:this.options.position.left?this.options.position.left:"auto",right:this.options.position.right?this.options.position.right:"auto"}):this._container.addClass("bottom-left")},bindToast:function(){var t=this;this._toastEl.on("afterShown",function(){t.processLoader()}),this._toastEl.find(".close-jq-toast-single").on("click",function(o){o.preventDefault(),"fade"===t.options.showHideTransition?(t._toastEl.trigger("beforeHide"),t._toastEl.fadeOut(function(){t._toastEl.trigger("afterHidden")})):"slide"===t.options.showHideTransition?(t._toastEl.trigger("beforeHide"),t._toastEl.slideUp(function(){t._toastEl.trigger("afterHidden")})):(t._toastEl.trigger("beforeHide"),t._toastEl.hide(function(){t._toastEl.trigger("afterHidden")}))}),"function"==typeof this.options.beforeShow&&this._toastEl.on("beforeShow",function(){t.options.beforeShow()}),"function"==typeof this.options.afterShown&&this._toastEl.on("afterShown",function(){t.options.afterShown()}),"function"==typeof this.options.beforeHide&&this._toastEl.on("beforeHide",function(){t.options.beforeHide()}),"function"==typeof this.options.afterHidden&&this._toastEl.on("afterHidden",function(){t.options.afterHidden()})},addToDom:function(){var o=t(".jq-toast-wrap");if(0===o.length?(o=t("<div></div>",{"class":"jq-toast-wrap"}),t("body").append(o)):(!this.options.stack||isNaN(parseInt(this.options.stack,10)))&&o.empty(),o.find(".jq-toast-single:hidden").remove(),o.append(this._toastEl),this.options.stack&&!isNaN(parseInt(this.options.stack),10)){var i=o.find(".jq-toast-single").length,s=i-this.options.stack;s>0&&t(".jq-toast-wrap").find(".jq-toast-single").slice(0,s).remove()}this._container=o},canAutoHide:function(){return this.options.hideAfter!==!1&&!isNaN(parseInt(this.options.hideAfter,10))},processLoader:function(){if(!this.canAutoHide()||this.options.loader===!1)return!1;var t=this._toastEl.find(".jq-toast-loader"),o=(this.options.hideAfter-400)/1e3+"s",i=this.options.loaderBg,s=t.attr("style")||"";s=s.substring(0,s.indexOf("-webkit-transition")),s+="-webkit-transition: width "+o+" ease-in;                       -o-transition: width "+o+" ease-in;                       transition: width "+o+" ease-in;                       background-color: "+i+";",t.attr("style",s).addClass("jq-toast-loaded")},animate:function(){var t=this;if(this._toastEl.hide(),this._toastEl.trigger("beforeShow"),"fade"===this.options.showHideTransition.toLowerCase()?this._toastEl.fadeIn(function(){t._toastEl.trigger("afterShown")}):"slide"===this.options.showHideTransition.toLowerCase()?this._toastEl.slideDown(function(){t._toastEl.trigger("afterShown")}):this._toastEl.show(function(){t._toastEl.trigger("afterShown")}),this.canAutoHide()){var t=this;o.setTimeout(function(){"fade"===t.options.showHideTransition.toLowerCase()?(t._toastEl.trigger("beforeHide"),t._toastEl.fadeOut(function(){t._toastEl.trigger("afterHidden")})):"slide"===t.options.showHideTransition.toLowerCase()?(t._toastEl.trigger("beforeHide"),t._toastEl.slideUp(function(){t._toastEl.trigger("afterHidden")})):(t._toastEl.trigger("beforeHide"),t._toastEl.hide(function(){t._toastEl.trigger("afterHidden")}))},this.options.hideAfter)}},reset:function(o){"all"===o?t(".jq-toast-wrap").remove():this._toastEl.remove()},update:function(t){this.prepareOptions(t,this.options),this.setup(),this.bindToast()}};t.toast=function(t){var o=Object.create(i);return o.init(t,this),{reset:function(t){o.reset(t)},update:function(t){o.update(t)}}},t.toast.options={text:"",heading:"",showHideTransition:"fade",allowToastClose:!0,hideAfter:3e3,loader:!0,loaderBg:"#9EC600",stack:5,position:"bottom-left",bgColor:!1,textColor:!1,textAlign:"left",icon:!1,beforeShow:function(){},afterShown:function(){},beforeHide:function(){},afterHidden:function(){}}}(jQuery,window,document);
 
 /*!
- * main dom functions
+ * dom functions
  */
 
-      function isNumberKey(evt) {
-            var charCode = (evt.which) ? evt.which : evt.keyCode
-            if (charCode > 57)
-                return false;
-            return true;
+function isNumberKey(evt) {
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    if (charCode > 57)
+        return false;
+    return true;
+}
+
+var malesrc = "./assets/images/person-icon-m.svg";
+var femalesrc = "./assets/images/person-icon-f.svg";
+
+var fname,
+    lname,
+    gender,
+    height,
+    eyecolor,
+    weight,
+    pounds,
+    race,
+    bloodtype,
+    religion,
+    age,
+    haircolor,
+    shoesize,
+    tanningability,
+    sexualorientation,
+    dominanthand,
+    language,
+    income,
+    wbmi,
+    hbmi,
+    bmi,
+    bmistring,
+    valuearray,
+    percentage,
+    answer,
+    worldpopulation = 7400000000;
+
+var file_name = "data.json",
+    file_namelist = "datanames.json",
+    field_name = "name",
+    field_type = "type",
+    field_value = "value",
+    zero = "0.00",
+    dash = "-",
+    field_first = "first",
+    field_last = "last",
+    field_option = "option",
+    field_gender = "gender",
+    field1 = "Height",
+    field2 = "Eye Color",
+    field3 = "Weight",
+    field4 = "Race",
+    field5 = "Blood Type",
+    field6 = "Faith",
+    field7 = "Age",
+    field8 = "Hair color",
+    field9 = "Shoe Size",
+    field10 = "Tanning Ability",
+    field11 = "Sexual Orientation",
+    field12 = "Dominant Hand",
+    field13 = "Languge",
+    field14 = "Income";
+
+function calculateBMI(w, h) {
+    wbmi = w * 703;
+    hbmi = h * h;
+    bmi = (wbmi / hbmi).toFixed(1);
+
+    if (bmi < 18.5) {
+        bmistring = "Underweight";
+    } else if (bmi >= 18.5 && bmi < 25) {
+        bmistring = "Normal";
+    } else if (bmi >= 25 && bmi < 30) {
+        bmistring = "Overweight";
+    } else {
+        bmistring = "Obese";
+    }
+
+    return bmistring;
+}
+
+var data = function() {
+    var t = null;
+    return $.ajax({
+        async: !1,
+        global: !1,
+        url: file_name,
+        dataType: "json",
+        success: function(e) {
+            t = e
+        }
+    }), t
+}();
+var datanames = function() {
+    var t = null;
+    return $.ajax({
+        async: !1,
+        global: !1,
+        url: file_namelist,
+        dataType: "json",
+        success: function(e) {
+            t = e
+        }
+    }), t
+}();
+
+function getData() {
+    fname = $("#fname").val().trim().toUpperCase();
+    lname = $("#lname").val().trim().toUpperCase();
+    gender = $("#gender").val();
+    height = $("#height").val();
+    eyecolor = $("#eyecolor").val();
+    pounds = $("#weight").val().trim();
+    weight = calculateBMI(pounds, height);
+    race = $("#race").val();
+    bloodtype = $("#bloodtype").val();
+    religion = $("#religion").val();
+    age = $("#age").val();
+    haircolor = $("#haircolor").val();
+    shoesize = $("#shoesize").val();
+    tanningability = $("#tanningability").val();
+    sexualorientation = $("#sexualorientation").val();
+    dominanthand = $("#dominanthand").val();
+    language = $("#language").val();
+    income = $("#income").val();
+    valuearray = [];
+
+    if (gender != null && gender != "" && height != null && height != "" && eyecolor != null && eyecolor != "" && pounds != null && pounds != "" && race != null && race != "" && bloodtype != null && bloodtype != "" && religion != null && religion != "" && age != null && age != "" && haircolor != null && haircolor != "" && shoesize != null && shoesize != "" && tanningability != null && tanningability != "" && sexualorientation != null && sexualorientation != "" && dominanthand != null && dominanthand != "" && language != null && language != "" && income != null && income != "") {
+    	var filtered = $.grep(data, function(n, i) {
+    		return ((n[field_name] == field1 && n[field_gender] == gender && n[field_option] == height && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field2 && n[field_option] == eyecolor && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field3 && n[field_gender] == gender && n[field_option] == weight && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field4 && n[field_option] == race && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field5 && n[field_option] == bloodtype && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field6 && n[field_option] == religion && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field7 && n[field_option] == age && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field8 && n[field_option] == haircolor && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field9 && n[field_gender] == gender && n[field_option] == shoesize && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field10 && n[field_option] == tanningability && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field11 && n[field_option] == sexualorientation && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field12 && n[field_option] == dominanthand && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field13 && n[field_option] == language && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field14 && n[field_option] == income && n[field_value] !== zero && n[field_value] !== dash));
+    	});
+
+    	var firstnames = $.grep(datanames, function(n, i) {
+    		return (n[field_type] == field_first && n[field_gender] == gender && n[field_name] == fname);
+    	});
+
+    	var lastnames = $.grep(datanames, function(n, i) {
+    		return (n[field_type] == field_last && n[field_name] == lname);
+    	});
+
+    	var result = filtered;
+    	var resultfirstname = firstnames;
+    	var resultlastname = lastnames;
+
+        for (var i = 0; i < result.length; i++) {
+            valuearray[i] = result[i].value;
         }
 
-        var malesrc = "./assets/images/person-icon-m.svg";
-        var femalesrc = "./assets/images/person-icon-f.svg";
-
-        var fname,
-            lname,
-            gender,
-            height,
-            eyecolor,
-            weight,
-            pounds,
-            race,
-            bloodtype,
-            religion,
-            age,
-            haircolor,
-            shoesize,
-            tanningability,
-            sexualorientation,
-            dominanthand,
-            language,
-            income,
-            wbmi,
-            hbmi,
-            bmi,
-            bmistring,
-            valuearray,
-            percentage,
-            answer,
-            worldpopulation = 7400000000;
-
-        var file_name = "data.json",
-            file_namelist = "datanames.json",
-            field_name = "name",
-            field_type = "type",
-            field_value = "value",
-            zero = "0.00",
-            dash = "-",
-            field_first = "first",
-            field_last = "last",
-            field_option = "option",
-            field_gender = "gender",
-            field1 = "Height",
-            field2 = "Eye Color",
-            field3 = "Weight",
-            field4 = "Race",
-            field5 = "Blood Type",
-            field6 = "Faith",
-            field7 = "Age",
-            field8 = "Hair color",
-            field9 = "Shoe Size",
-            field10 = "Tanning Ability",
-            field11 = "Sexual Orientation",
-            field12 = "Dominant Hand",
-            field13 = "Languge",
-            field14 = "Income";
-
-        function calculateBMI(w, h) {
-            wbmi = w * 703;
-            hbmi = h * h;
-            bmi = (wbmi / hbmi).toFixed(1);
-
-            if (bmi < 18.5) {
-                bmistring = "Underweight";
-            } else if (bmi >= 18.5 && bmi < 25) {
-                bmistring = "Normal";
-            } else if (bmi >= 25 && bmi < 30) {
-                bmistring = "Overweight";
-            } else {
-                bmistring = "Obese";
-            }
-
-            return bmistring;
+        if (resultfirstname.length) {
+            valuearray.push(resultfirstname[0].value);
         }
 
-        var data = function() {
-            var t = null;
-            return $.ajax({
-                async: !1,
-                global: !1,
-                url: file_name,
-                dataType: "json",
-                success: function(e) {
-                    t = e
-                }
-            }), t
-        }();
-        var datanames = function() {
-            var t = null;
-            return $.ajax({
-                async: !1,
-                global: !1,
-                url: file_namelist,
-                dataType: "json",
-                success: function(e) {
-                    t = e
-                }
-            }), t
-        }();
-
-        function getData() {
-            fname = $('#fname').val().trim().toUpperCase();
-            lname = $('#lname').val().trim().toUpperCase();
-            gender = $('#gender').val();
-            height = $('#height').val();
-            eyecolor = $('#eyecolor').val();
-            pounds = $('#weight').val().trim();
-            weight = calculateBMI(pounds, height);
-            race = $('#race').val();
-            bloodtype = $('#bloodtype').val();
-            religion = $('#religion').val();
-            age = $('#age').val();
-            haircolor = $('#haircolor').val();
-            shoesize = $('#shoesize').val();
-            tanningability = $('#tanningability').val();
-            sexualorientation = $('#sexualorientation').val();
-            dominanthand = $('#dominanthand').val();
-            language = $('#language').val();
-            income = $('#income').val();
-            valuearray = [];
-
-            if (gender != null && gender != "" && height != null && height != "" && eyecolor != null && eyecolor != "" && pounds != null && pounds != "" && race != null && race != "" && bloodtype != null && bloodtype != "" && religion != null && religion != "" && age != null && age != "" && haircolor != null && haircolor != "" && shoesize != null && shoesize != "" && tanningability != null && tanningability != "" && sexualorientation != null && sexualorientation != "" && dominanthand != null && dominanthand != "" && language != null && language != "" && income != null && income != "") {
-                var filtered = $.grep(data, function(n, i) {
-                        return ((n[field_name] == field1 && n[field_gender] == gender && n[field_option] == height && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field2 && n[field_option] == eyecolor && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field3 && n[field_gender] == gender && n[field_option] == weight && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field4 && n[field_option] == race && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field5 && n[field_option] == bloodtype && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field6 && n[field_option] == religion && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field7 && n[field_option] == age && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field8 && n[field_option] == haircolor && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field9 && n[field_gender] == gender && n[field_option] == shoesize && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field10 && n[field_option] == tanningability && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field11 && n[field_option] == sexualorientation && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field12 && n[field_option] == dominanthand && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field13 && n[field_option] == language && n[field_value] !== zero && n[field_value] !== dash) || (n[field_name] == field14 && n[field_option] == income && n[field_value] !== zero && n[field_value] !== dash));
-                    }),
-
-                    firstnames = $.grep(datanames, function(n, i) {
-                        return ((n[field_type] == field_first && n[field_gender] == gender && n[field_name] == fname));
-                    }),
-
-                    lastnames = $.grep(datanames, function(n, i) {
-                        return ((n[field_type] == field_last && n[field_name] == lname));
-                    }),
-
-                result = filtered;
-                resultfirstname = firstnames;
-                resultlastname = lastnames;
-
-                for (var i = 0; i < result.length; i++) {
-                    valuearray[i] = result[i].value;
-                }
-
-                if (resultfirstname.length) {
-                    valuearray.push(resultfirstname[0].value);
-                }
-
-                if (resultlastname.length) {
-                    valuearray.push(resultlastname[0].value);
-                }
-
-                percentage = valuearray.reduce(function(a, b) {return a * b});
-
-                answer = (percentage*worldpopulation).toFixed(0);
-
-                $("#result_span").text(answer);
-
-                if(gender == "Female") {
-                    $("#personicon").attr('src', femalesrc);
-                } else {
-                    $("#personicon").attr('src', malesrc);
-                }
-
-                $('#myModal').modal('show');
-
-            } else {
-                $.toast({
-                    heading: 'Oops, there was an error',
-                    text: 'A field or two were left blank. Please fill out all the fields.<br/><span style="font-size: 14px;">*First Name and Last Name are not required</span>',
-                    showHideTransition: 'fade',
-                    icon: 'error',
-                    stack: false,
-                    position: 'bottom-left',
-                    loader: 'false',
-                    loaderBg: '#a94442',
-                    hideAfter: 6000 
-                });
-            }
+        if (resultlastname.length) {
+            valuearray.push(resultlastname[0].value);
         }
+
+        percentage = valuearray.reduce(function(a, b) {return a * b});
+
+        answer = (percentage*worldpopulation).toFixed(0);
+
+        $("#result_span").text(answer);
+
+        if(gender == "Female") {
+            $("#personicon").attr("src", femalesrc);
+        } else {
+            $("#personicon").attr("src", malesrc);
+        }
+
+        $("#myModal").modal("show");
+
+    } else {
+        $.toast({
+            heading: "Oops, there was an error",
+            text: "A field or two were left blank. Please fill out all the fields.<br/><span style='font-size: 14px;''>*First Name and Last Name are not required</span>",
+            showHideTransition: "fade",
+            icon: "error",
+            stack: false,
+            position: "bottom-left",
+            loader: "false",
+            loaderBg: "#a94442",
+            hideAfter: 6000
+        });
+    }
+}
